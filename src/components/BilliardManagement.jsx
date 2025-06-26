@@ -7,6 +7,7 @@ import { Input } from './ui/input'
 import { Label } from './ui/label'
 import { Clock, User, Calendar, Plus } from 'lucide-react'
 import ApiService from '../services/api'
+import { cn } from '@/lib/utils'
 
 export default function BilliardManagement() {
   const [reservations, setReservations] = useState([])
@@ -156,7 +157,7 @@ export default function BilliardManagement() {
             </DialogHeader>
             <div className="space-y-4">
               <div>
-                <Label htmlFor="table_id">Table</Label>
+                <Label className={cn("mb-2")} htmlFor="table_id">Table</Label>
                 <select
                   id="table_id"
                   value={newReservation.table_id}
@@ -173,7 +174,7 @@ export default function BilliardManagement() {
               </div>
               
               <div>
-                <Label htmlFor="customer_name">Customer Name</Label>
+                <Label className={cn("mb-2")} htmlFor="customer_name">Customer Name</Label>
                 <Input
                   id="customer_name"
                   value={newReservation.customer_name}
@@ -183,7 +184,7 @@ export default function BilliardManagement() {
               </div>
 
               <div>
-                <Label htmlFor="start_time">Start Time</Label>
+                <Label className={cn("mb-2")} htmlFor="start_time">Start Time</Label>
                 <Input
                   id="start_time"
                   type="datetime-local"
@@ -193,7 +194,7 @@ export default function BilliardManagement() {
               </div>
 
               <div>
-                <Label htmlFor="end_time">End Time</Label>
+                <Label className={cn("mb-2")} htmlFor="end_time">End Time</Label>
                 <Input
                   id="end_time"
                   type="datetime-local"

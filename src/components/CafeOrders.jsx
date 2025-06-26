@@ -8,6 +8,7 @@ import { Label } from './ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 import { Plus, Coffee, UtensilsCrossed, Cake, GlassWater } from 'lucide-react'
 import ApiService from '../services/api'
+import { cn } from '@/lib/utils'
 
 export default function CafeOrders() {
   const [orders, setOrders] = useState([])
@@ -166,7 +167,7 @@ export default function CafeOrders() {
             </DialogHeader>
             <div className="space-y-4">
               <div>
-                <Label htmlFor="customer_name">Customer Name</Label>
+                <Label className={cn("mb-2")} htmlFor="customer_name">Customer Name</Label>
                 <Input
                   id="customer_name"
                   value={newOrder.customer_name}
@@ -176,7 +177,7 @@ export default function CafeOrders() {
               </div>
               
               <div>
-                <Label>Order Items</Label>
+                <Label className={cn("mb-2")}>Order Items</Label>
                 <div className="grid grid-cols-2 gap-2 max-h-64 overflow-y-auto">
                   {menuItems.map((item) => (
                     <Card key={item.id} className="p-3">
@@ -196,7 +197,7 @@ export default function CafeOrders() {
 
               {newOrder.items.length > 0 && (
                 <div>
-                  <Label>Selected Items</Label>
+                  <Label className={cn("mb-2")}>Selected Items</Label>
                   <div className="space-y-2">
                     {newOrder.items.map((item, index) => (
                       <div key={index} className="flex justify-between items-center p-2 bg-gray-50 rounded">
